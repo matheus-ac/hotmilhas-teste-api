@@ -36,3 +36,8 @@ Uso
     * POST http://localhost:8000/api/getcidades
         * Informe os valores na requisão -> veiculo, marca, modelo
         * Exemplo: http://prntscr.com/o42bk8
+
+* Lista pesquisa:
+    * POST http://localhost:8000/api/getsearch
+        * Informe os valores na requisão -> veiculo, marca, modelo, cidade
+        * Exemplo: http://prntscr.com/o42cju
