@@ -16,6 +16,7 @@ Route::get('/getmarcas/{id}', 'ApiController@getMarcas');
 Route::get('/getmodelos/{id}', 'ApiController@getModelos');
 Route::post('/getcidades', 'ApiController@getCidades');
 Route::post('/getsearch', 'ApiController@getSearch');
+Route::get('/detalhes/{id}', 'ApiController@getDetalhes');
 
 
 

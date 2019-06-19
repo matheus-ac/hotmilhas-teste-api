@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-
+use Goutte\Client;
+use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
@@ -76,6 +77,51 @@ class ApiController extends Controller
                     ];
             });
         }
+
+        return json_encode($result, JSON_FORCE_OBJECT);
+
+    }
+
+    public function getDetalhes($id)
+    {
+
+        $client = new Client();
+        $crawler = $client->request('GET', 'https://www.seminovosbh.com.br/veiculo/codigo/'.$id);
+
+        $result['id'] = $id;
+        $result['titulo'] = $crawler->filter('#textoBoxVeiculo h5')->text();
+        $result['valor'] = $crawler->filter('#textoBoxVeiculo p')->text();
+        $result['fotoVeiculo'] = $crawler->filter('#fotoVeiculo img')->attr('src');
+
+
+        $crawler->filter('#infDetalhes')->each(function ($node) use (&$result) {
+            $total = $node->filter('ul > li')->count();
+            for ($i = 0; $i < $total; $i++) {
+                $li[] = $node->filter('ul li')->eq($i)->text();
+            };
+            $result['Detalhes'] = $li;
+        });
+        $crawler->filter('#infDetalhes2')->each(function ($node) use (&$result) {
+            $total = $node->filter('ul > li')->count();
+            for ($i = 0; $i < $total; $i++) {
+                $li[] = $node->filter('ul li')->eq($i)->text();
+            };
+            $result['Acessórios'] = $li;
+        });
+        $crawler->filter('#infDetalhes3')->each(function ($node) use (&$result) {
+            $total = $node->filter('ul > p')->count();
+            for ($i = 0; $i < $total; $i++) {
+                $p[] = $node->filter('ul p')->eq($i)->text();
+            };
+            $result['Observações'] = $p;
+        });
+        $crawler->filter('#infDetalhes4')->each(function ($node) use (&$result) {
+            $total = $node->filter('ul > li')->count();
+            for ($i = 0; $i < $total; $i++) {
+                $li[] = trim($node->filter('ul li')->eq($i)->text());
+            };
+            $result['Contato'] = $li;
+        });
 
         return json_encode($result, JSON_FORCE_OBJECT);
 
