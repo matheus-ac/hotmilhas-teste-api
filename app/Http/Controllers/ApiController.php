@@ -68,6 +68,7 @@ class ApiController extends Controller
                 $titulo = explode(" R$", $node->filter('.titulo-busca h4')->text());
 
                 $result[] = [
+                    'anuncio_id'    => $id,
                     'titulo'        => $titulo[0],
                     'valor'         => trim($node->filter('.preco_busca')->text()),
                     'ano'           => $node->filter('dd > p')->first()->text(),
