@@ -28,3 +28,11 @@ Uso
             * 2 = caminhão
             * 3 = moto
 
+* Lista modelos:
+    * GET http://localhost:8000/api/getmodelos/id
+        * ID é a marca do veiculo, utilize o getmarcas acima para receber o ID da marca
+
+* Lista modelos:
+    * POST http://localhost:8000/api/getcidades
+        * Informe os valores na requisão -> veiculo, marca, modelo
+        * Exemplo: http://prntscr.com/o42bk8
