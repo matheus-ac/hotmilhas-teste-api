@@ -41,3 +41,8 @@ Uso
     * POST http://localhost:8000/api/getsearch
         * Informe os valores na requisão -> veiculo, marca, modelo, cidade
         * Exemplo: http://prntscr.com/o42cju
+
+* Exibir detalhes de um anuncio:
+    * GET http://localhost:8000/api/detalhes/id
+        * ID é do anuncio, utilize o getsearch acima para receber o ID do anuncio
+        * Exemplo: http://prntscr.com/o42e1u
