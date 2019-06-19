@@ -15,7 +15,7 @@ Installation
 
 Renomear .env.example para .env
 
-.. code-block:: bash
+
 
     composer install
 
@@ -34,12 +34,12 @@ Uso
 
 * Lista modelos:
     * POST http://localhost:8000/api/getcidades
-        * Informe os valores na requisão -> veiculo, marca, modelo
+        * Informe os valores na requisição -> veiculo, marca, modelo
         * Exemplo: http://prntscr.com/o42bk8
 
 * Lista pesquisa:
     * POST http://localhost:8000/api/getsearch
-        * Informe os valores na requisão -> veiculo, marca, modelo, cidade
+        * Informe os valores na requisição -> veiculo, marca, modelo, cidade
         * Exemplo: http://prntscr.com/o42cju
 
 * Exibir detalhes de um anuncio:
