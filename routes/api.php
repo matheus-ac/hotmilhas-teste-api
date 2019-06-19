@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 Route::get('/getmarcas/{id}', 'ApiController@getMarcas');
+Route::get('/getmodelos/{id}', 'ApiController@getModelos');
+
+
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
