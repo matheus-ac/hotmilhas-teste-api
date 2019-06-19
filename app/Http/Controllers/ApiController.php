@@ -23,4 +23,15 @@ class ApiController extends Controller
         return $url;
     }
 
+    public function getCidades(Request $request)
+    {
+        $veiculo = $request->veiculo;
+        $marca = $request->marca;
+        $modelo = $request->modelo;
+
+
+        $json = file_get_contents('https://www.seminovosbh.com.br/json/index/busca-cidades/veiculo/'.$veiculo.'/marca/'.$marca.'/modelo/'.$modelo.'/cidade/0/data.js');
+        $url = json_decode($json);
+        return $url;
+    }
 }

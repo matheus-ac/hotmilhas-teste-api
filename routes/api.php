@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 */
 Route::get('/getmarcas/{id}', 'ApiController@getMarcas');
 Route::get('/getmodelos/{id}', 'ApiController@getModelos');
-
+Route::post('/getcidades', 'ApiController@getCidades');
 
 
 
