@@ -23,8 +23,8 @@ Uso
 -----
 * Lista marcas:
     * GET http://localhost:8000/api/getmarcas/id
-            ID é o tipo do veiculo 
-             * 1 = carro
-             * 2 = caminhão
-             * 3 = moto
+        * ID é o tipo do veiculo 
+            * 1 = carro
+            * 2 = caminhão
+            * 3 = moto
 
